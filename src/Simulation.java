@@ -32,7 +32,7 @@ public class Simulation {
 
         for(int i = 0; i < grid.getHSize(); i++){
             for(int j = 0; j < grid.getVSize(); j++){
-                
+
             }
         }
 
