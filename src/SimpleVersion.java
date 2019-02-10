@@ -1,8 +1,6 @@
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-
-
 public class SimpleVersion {
 
     private static int ROWS = 30, COLS = 100;
@@ -21,10 +19,9 @@ public class SimpleVersion {
 
     public static void main(String[] args) throws InterruptedException {
 
-
         populateGrid(); //Initially populate grid
 
-
+        //Simulation loop
         for(int i = 0; i < NUM_ITERS; i++) {
             updateAliveMatrix();
             doStarvation();
@@ -35,33 +32,21 @@ public class SimpleVersion {
             System.out.println("----------------");
             TimeUnit.MILLISECONDS.sleep(SLEEP_MS);
         }
-
-
-
-
-
-
-
-
     }
-
-    // ******** Clear console **********************
 
 
     // ******** Rules ******************************
     /*
-    Starvation          (dies)
-    OverPopulation      (dies)
-    Live                (lives, no change)
-    Resurrect           (comes back to life)
+    Starvation          (dies if < 2 live neighbors)
+    OverPopulation      (dies if > 3 live neighbors)
+    Live                (lives, no change, 2 or 3 neighbors)
+    Resurrect           (comes back to life if dead and exactly 3 live neighbors)
      */
 
     public static void doStarvation(){
         for(int i = 0; i < ROWS; i++){
             for(int j = 0; j < COLS; j++){
-               if(aliveGrid[i][j] < 2){
-                   grid[i][j] = 0;
-               }
+               if(aliveGrid[i][j] < 2){grid[i][j] = 0;}
             }
         }
     }
@@ -69,9 +54,7 @@ public class SimpleVersion {
     public static void doOverpopulation(){
         for(int i = 0; i < ROWS; i++){
             for(int j = 0; j < COLS; j++){
-                if(aliveGrid[i][j] > 3){
-                    grid[i][j] = 0;
-                }
+                if(aliveGrid[i][j] > 3){grid[i][j] = 0;}
             }
         }
     }
@@ -80,9 +63,7 @@ public class SimpleVersion {
         for(int i = 0; i < ROWS; i++){
             for(int j = 0; j < COLS; j++){
                 if(grid[i][j] == 0) {
-                    if (aliveGrid[i][j] == 3) {
-                        grid[i][j] = 1;
-                    }
+                    if (aliveGrid[i][j] == 3) {grid[i][j] = 1;}
                 }
             }
         }
@@ -94,9 +75,7 @@ public class SimpleVersion {
 
     public static void displayAliveMatrix(){
         for(int i = 0; i < ROWS; i++){
-            for(int j = 0; j < COLS; j++){
-                System.out.print(aliveGrid[i][j] + " ");
-            }
+            for(int j = 0; j < COLS; j++){System.out.print(aliveGrid[i][j] + " ");}
             System.out.println();
         }
     }
@@ -104,9 +83,7 @@ public class SimpleVersion {
     //Updates matrix representing number of neighbors each cell has
     public static void updateAliveMatrix(){
         for(int i = 0; i < ROWS; i++){
-            for(int j = 0; j < COLS; j++){
-               aliveGrid[i][j] = getLiveNeighbors(i, j);
-            }
+            for(int j = 0; j < COLS; j++){aliveGrid[i][j] = getLiveNeighbors(i, j);}
         }
     }
 
@@ -115,17 +92,15 @@ public class SimpleVersion {
         int alive = 0;
         int finX, finY; //final x and y
 
-        //***Need to find number of cells adjacent to our cell that are alive
+        //Need to find number of cells adjacent to our cell that are alive
 
-
-        //Get status from cells above
-
+        //Get status from three cells above
         for(int i = -1; i <= 1; i++){
 
             finX = xpos + i;
             finY = ypos - 1;
 
-            //wraparound conditions
+            //Wraparound conditions
             if(finX > ROWS -1){
                 finX = finX - ROWS;
             }
@@ -141,7 +116,7 @@ public class SimpleVersion {
             alive = alive + grid[(finX)][finY];
         }
 
-        //Cells below (origin at top left)
+        //Three cells below (origin at top left)
         for(int i = -1; i <= 1; i++){
 
             finX = xpos + i;
@@ -170,9 +145,7 @@ public class SimpleVersion {
         }
 
         alive += grid[finX][finY];
-
         return alive;
-
     }
 
     public static void populateGrid (){
@@ -218,8 +191,5 @@ public class SimpleVersion {
             }
             System.out.println();
         }
-
-
     }
-
 }
