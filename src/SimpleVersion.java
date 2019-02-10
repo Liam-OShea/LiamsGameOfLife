@@ -8,7 +8,7 @@ public class SimpleVersion {
                                         //1 -> more live cells
                                         //20 -> fewer live cells
 
-    private static int SLEEP_MS = 100;  //Delay between each board update in milliseconds
+    private static int SLEEP_MS = 1000;  //Delay between each board update in milliseconds
     private static int NUM_ITERS = 150;
 
     //Create a board of cells, 1 is alive, 0 is dead
@@ -179,7 +179,7 @@ public class SimpleVersion {
         //Convert into nicer grid that is easier to see
         for(int i = 0; i < ROWS; i++){
             for(int j = 0; j < COLS; j++){
-                if(grid[i][j] == 1){prettyGrid[i][j] = "#";}
+                if(grid[i][j] == 1){prettyGrid[i][j] = "@";}
                 else if(grid[i][j] == 0){prettyGrid[i][j] = " ";}
             }
         }

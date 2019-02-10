@@ -17,8 +17,8 @@
       <file leaf-file-name="SimpleVersion.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SimpleVersion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2895">
-              <caret line="193" column="5" selection-start-line="193" selection-start-column="5" selection-end-line="193" selection-end-column="5" />
+            <state relative-caret-position="326">
+              <caret line="181" column="57" selection-start-line="181" selection-start-column="57" selection-end-line="181" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -174,12 +174,12 @@
       <option name="presentableId" value="Default" />
       <updated>1549756308575</updated>
       <workItem from="1549756314756" duration="3734000" />
-      <workItem from="1549760198898" duration="8129000" />
+      <workItem from="1549760198898" duration="8630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11863000" />
+    <option name="totallyTimeSpent" value="12364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -195,7 +195,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.10068966" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.07172414" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -328,8 +328,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SimpleVersion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2895">
-          <caret line="193" column="5" selection-start-line="193" selection-start-column="5" selection-end-line="193" selection-end-column="5" />
+        <state relative-caret-position="326">
+          <caret line="181" column="57" selection-start-line="181" selection-start-column="57" selection-end-line="181" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
